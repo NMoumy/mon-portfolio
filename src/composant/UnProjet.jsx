@@ -1,25 +1,27 @@
 import React from 'react';
 import './UnProjet.scss'; 
 
-export default function UnProjet(props) {
-  const { onClick } = props;
+export default function UnProjet({ id, titre, date, image, onClick, technologies}) {
 
   return (
     <div className="UnProjet" onClick={onClick}>
-      <img src="https://images.unsplash.com/photo-1612441804231-77a36b284856?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW91bnRhaW4lMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="Projet 1" />
+      <img src={image} alt={titre} />
       <div className="information">
-        <h3>Memo</h3>
+        <h3>{titre}</h3>
         <div className="technologie">
           <h4>technologie utilisée</h4>
           <div className="liste-tech">
-            <div>REACT</div> <div>JavaScript</div>
+          {technologies.map((technologie, index) => (
+            <div key={index}>{technologie}</div>
+          ))}
           </div>
         </div>
         <div className="date">
           <h4>date</h4>
-          <p>2023/06/15</p>
+          <p>{date}</p>
         </div>
       </div>
     </div>
   );
 }
+

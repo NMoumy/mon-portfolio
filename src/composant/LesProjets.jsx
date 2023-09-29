@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './LesProjets.scss';
 import UnProjet from './UnProjet';
 import Superposition from './Superposition';
+import { lireTout} from '../code/projet-modele';
 
 export default function LesProjets() {
   const [superpositionVisible, setSuperpositionVisible] = useState(false);
+
+  const [projets, setProjets] = useState([]);
+
+  useEffect(()=> {
+    async function chercherProjets() {
+      const projetsFS = await lireTout()
+      setProjets(projetsFS.map(
+          doc => ({id: doc.id, ...doc.data()})
+      ));
+    }
+    chercherProjets();
+  }, []);
 
   const afficherSuperposition = () => {
     // Empêcher le défilement de la page
@@ -24,10 +37,17 @@ export default function LesProjets() {
 
   return (
     <section className="LesProjets">
-      <UnProjet onClick={afficherSuperposition} />
-      <UnProjet onClick={afficherSuperposition} />
-      <UnProjet onClick={afficherSuperposition} />
-      {superpositionVisible ? <Superposition onClose={fermerSuperposition}/> : ''}
+      {
+        projets.map(
+          projet => <UnProjet key={projet.id} {...projet} onClick={afficherSuperposition} />
+        )
+      }
+      {superpositionVisible ?
+        projets.map(
+          projet => <Superposition key={projet.id} {...projet} onClose={fermerSuperposition}/> 
+        )
+        : ''}
     </section>
   );
 }
+ 
