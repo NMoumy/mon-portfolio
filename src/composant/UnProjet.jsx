@@ -1,7 +1,7 @@
 import React from 'react';
 import './UnProjet.scss'; 
 
-export default function UnProjet({ id, titre, date, image, onClick, technologies}) {
+export default function UnProjet({ id, titre, date, onClick, image, technologies }) {
 
   return (
     <div className="UnProjet" onClick={onClick}>
@@ -11,9 +11,9 @@ export default function UnProjet({ id, titre, date, image, onClick, technologies
         <div className="technologie">
           <h4>technologie utilisée</h4>
           <div className="liste-tech">
-          {technologies.map((technologie, index) => (
-            <div key={index}>{technologie}</div>
-          ))}
+            {technologies && technologies.map((technologie, index) => (
+              <div key={index}>{technologie}</div>
+            ))}
           </div>
         </div>
         <div className="date">
@@ -24,4 +24,3 @@ export default function UnProjet({ id, titre, date, image, onClick, technologies
     </div>
   );
 }
-

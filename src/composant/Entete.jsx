@@ -12,9 +12,9 @@ export default function Entete() {
           <h3>MN</h3>
         </div>
         <div>
-          <a href="#">Accueil</a>
+          {/* <a href="#">Accueil</a>
           <a href="#">Projets</a>
-          <a href="#">Contact</a>
+          <a href="#">Contact</a> */}
         </div>
         <button>télécharger le cv</button>
       </nav>

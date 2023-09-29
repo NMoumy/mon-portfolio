@@ -1,5 +1,6 @@
 .UnProjet {
   width: 350px;
+  // height: 100px;
   margin-bottom: 20px;
   background-color: #002137;
   display: flex;
@@ -15,8 +16,9 @@
 
   img {
     max-width: 100%;
-    background-size: cover;
-    height: auto;
+    // background-size: cover;
+    object-fit: cover;
+    height: 300px;
   }
 
   .information {
@@ -53,6 +55,7 @@
         justify-content: center;
         padding: 10px;
         gap: 10px;
+        // width: 25px;
 
         div {
           background-color: #c3ddf9;

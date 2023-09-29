@@ -42,11 +42,14 @@ export default function LesProjets() {
           projet => <UnProjet key={projet.id} {...projet} onClick={afficherSuperposition} />
         )
       }
-      {superpositionVisible ?
-        projets.map(
-          projet => <Superposition key={projet.id} {...projet} onClose={fermerSuperposition}/> 
-        )
-        : ''}
+      
+      {
+        superpositionVisible ?
+          projets.map(
+            projet => <Superposition key={projet.id} {...projet} onClose={fermerSuperposition}/> 
+          )
+          : ''
+      }
     </section>
   );
 }

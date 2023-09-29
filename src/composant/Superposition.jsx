@@ -1,6 +1,7 @@
 import './Superposition.scss'; 
+import YouTube from 'react-youtube';
 
-export default function Superposition({ onClose, description, titre, liens}) {
+export default function Superposition({ onClose, description, titre, videolien}) {
 
   const fermerSuperposition = () => {
     // Activer le défilement de la page
@@ -18,15 +19,7 @@ export default function Superposition({ onClose, description, titre, liens}) {
         </button>
         <h2>{titre}</h2>
         <div className="media-projet">
-          <iframe
-            width="640"
-            height="360"
-            src="https://www.youtube.com/embed/u5W2NWItytc?list=PLrSOXFDHBtfE5tpw0bjMevWxMWXotiSdO"
-            title="HTML/CSS #1 - introduction"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+        <YouTube videoId={videolien} />
         </div>
         <div className="description">
           <h3>description</h3>
