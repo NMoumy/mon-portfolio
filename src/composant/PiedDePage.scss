@@ -1,8 +1,17 @@
 /* Pied de page */
 footer {
   text-align: center;
-  height: 150px;
+  height: 175px;
   color: #ffffff;
   background-color: #002137;
   padding: 10px;
+  font-size: 1.3rem;
+
+  a {
+    transition: color 1s ease;
+  }
+  a:hover {
+    color: #6ABEE1;
+  }
+
 }

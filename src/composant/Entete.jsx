@@ -1,10 +1,11 @@
 import React from 'react';
 import './Entete.scss'; // Assurez-vous que le chemin d'accès au fichier CSS est correct
+import vague from '../svg/vague.svg'; // Assurez-vous que le chemin d'accès au fichier CSS est correct
 
 export default function Entete() {
   return (
     <header className="Entete">
-      <img src="svg/vague.svg" className="vague" alt="fond" />
+      <img src={vague} className="vague" alt="fond" />
 
       <nav>
         <div className="logo">
@@ -21,10 +22,9 @@ export default function Entete() {
       <div className="presentation">
         
         <div className="presentation-texte">
-          <h1>
-            Allo, mon nom est 
-            Moumy Ndiaye
-          </h1>
+          <h1>Allo, mon nom est</h1> 
+          <h1>Moumy Ndiaye</h1>
+          
 
           <p>
             Passionnée par la programmation et le design,<br />

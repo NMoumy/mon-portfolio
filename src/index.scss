@@ -26,17 +26,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Arial, sans-serif;
 }
 
-/* generale */
+//general 
 button {
   cursor: pointer;
-  padding: 10px;
   border-radius: 10px;
   border: none;
-  transition: all ease 1s;
-  background-color: #40819e;
-  color: #002137;
-}
-button:hover {
-  background-color: #ffffff;
-  color: #40819e;
 }

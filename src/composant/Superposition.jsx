@@ -1,10 +1,23 @@
 import React from 'react';
+import './Superposition.scss'; 
 
-export default function Superposition() {
+export default function Superposition(props) {
+  const { onClose } = props;
+
+  const fermerSuperposition = () => {
+    // Activer le défilement de la page
+    document.body.style.overflow = 'auto';
+
+    // Appeler la fonction onClose pour fermer la superposition
+    onClose();
+  };
+
   return (
     <div className="Superposition">
       <div className="desc-projet">
-        <button className="btn-quitter">X</button>
+        <button className="btn-quitter" onClick={fermerSuperposition}>
+          X
+        </button>
         <h2>Titre</h2>
         <div className="media-projet">
           <iframe
@@ -12,7 +25,7 @@ export default function Superposition() {
             height="360"
             src="https://www.youtube.com/embed/u5W2NWItytc?list=PLrSOXFDHBtfE5tpw0bjMevWxMWXotiSdO"
             title="HTML/CSS #1 - introduction"
-            frameBorder="0"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
