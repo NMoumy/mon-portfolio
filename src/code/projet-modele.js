@@ -1,5 +1,5 @@
-import { collection, getDocs, orderBy, query, } from "firebase/firestore";
-import { bd, collProjets, collLiens } from "./init";
+import { collection, getDocs, query, doc, getDoc } from "firebase/firestore";
+import { bd, collProjets } from "./init";
 
 // lire les dossiers
 export async function lireTout() {
@@ -11,11 +11,14 @@ export async function lireTout() {
     return projetsFS.docs;
 }
 
-export async function lireLien(id) {
-    const liensFS = await getDocs(
-        query(
-            collection(bd, collProjets, id, collLiens)
-        )
-    );
-    return liensFS.docs;
+export async function lireProjet(projetId) {
+  const projetDocRef = doc(bd, collProjets, projetId);
+  const projetDoc = await getDoc(projetDocRef);
+
+  if (projetDoc.exists()) {
+    return { id: projetDoc.id, ...projetDoc.data() };
+  } else {
+    return null; // Gérer le cas où le projet n'existe pas
+  }
 }
+

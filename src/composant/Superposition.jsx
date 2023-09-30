@@ -1,8 +1,8 @@
-import './Superposition.scss'; 
+import React from 'react';
+import './Superposition.scss';
 import YouTube from 'react-youtube';
 
-export default function Superposition({ onClose, description, titre, videolien}) {
-
+export default function Superposition({ onClose, projet }) {
   const fermerSuperposition = () => {
     // Activer le défilement de la page
     document.body.style.overflow = 'auto';
@@ -17,16 +17,18 @@ export default function Superposition({ onClose, description, titre, videolien})
         <button className="btn-quitter" onClick={fermerSuperposition}>
           X
         </button>
-        <h2>{titre}</h2>
+        <h2>{projet.titre}</h2>
         <div className="media-projet">
-        <YouTube videoId={videolien} />
+          <YouTube videoId={projet.videolien} />
         </div>
         <div className="description">
-          <h3>description</h3>
-          <p>{description}</p>
+          <h3>Description</h3>
+          <p>{projet.description}</p>
         </div>
         <div className="lien">
           <div className="liste-lien">
+            {/* Vous pouvez également afficher d'autres informations du projet ici */}
+            {/* <button>111</button> */}
           </div>
         </div>
       </div>

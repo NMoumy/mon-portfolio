@@ -1,7 +1,26 @@
 import React from 'react';
 import './UnProjet.scss'; 
+import imageLvdr from '../image/Lvdr.png';
+import imageMundi from '../image/Mundiquiz.png';
+import imageObjet from '../image/Objet.png';
+import imageVoiture from '../image/Voiture.jpg';
+import imageMemo from '../image/Memo.png';
+import image4w4 from '../image/4w4.png';
 
-export default function UnProjet({ id, titre, date, onClick, image, technologies }) {
+export default function UnProjet({ id, titre, date, onClick, technologies, titreImg }) {
+
+  // Associez chaque titre à son image
+  const imagesParTitre = {
+    'Lvdr' : imageLvdr,
+    'Mundiquiz': imageMundi,
+    'Objet': imageObjet,
+    'Voiture': imageVoiture,
+    'Memo': imageMemo,
+    '4w4': image4w4,
+  };
+
+  // Utilisez le titre pour obtenir l'image correspondante
+  const image = imagesParTitre[titreImg] || null;
 
   return (
     <div className="UnProjet" onClick={onClick}>
