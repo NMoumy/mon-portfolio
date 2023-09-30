@@ -1,6 +1,7 @@
 import React from 'react';
 import './Entete.scss'; // Assurez-vous que le chemin d'accès au fichier CSS est correct
 import vague from '../svg/vague.svg'; // Assurez-vous que le chemin d'accès au fichier CSS est correct
+import moi from '../image/moi.jpg'; // Assurez-vous que le chemin d'accès au fichier CSS est correct
 
 export default function Entete() {
   return (
@@ -37,7 +38,7 @@ export default function Entete() {
         </div>
 
         <div className="container-img">
-          <img src="https://blog.photoshelter.com/wp-content/uploads/2023/08/shutterstock_1564589632-1-650x450.jpg" alt="" />
+          <img src={moi} alt="" />
         </div>
 
       </div>
